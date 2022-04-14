@@ -1,16 +1,24 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+import 'structures.dart';
+import 'homeItemContainer.dart';
+
 void main() {
   runApp(MaterialApp(
-    title: 'Carrot Market Clone',
-    initialRoute: '/',
-    routes: {
-      '/': (context) => StartScreen(),
-      '/singIn': (context) => SignInScreen(),
-      '/logIn': (context) => LoginScreen(),
-    },
-  ));
+      title: 'Carrot Market Clone',
+      initialRoute: '/',
+      routes: {
+        // '/': (context) => StartScreen(),
+        '/': (context) => HomeScreen(),
+        '/singIn': (context) => SignInScreen(),
+        '/logIn': (context) => LoginScreen(),
+      },
+      theme: ThemeData(
+        // primaryColor: Colors.black,
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(),
+        accentColor: Color.fromRGBO(254, 126, 53, 1.0),
+      )));
 }
 
 class StartScreen extends StatelessWidget {
@@ -51,6 +59,8 @@ class StartScreen extends StatelessWidget {
               width: double.infinity,
               padding: EdgeInsets.only(left: 15, right: 15),
               margin: EdgeInsets.only(bottom: 25),
+              decoration:
+                  BoxDecoration(borderRadius: BorderRadius.circular(10)),
               child: RaisedButton(
                 color: Color.fromRGBO(254, 126, 53, 1.0),
                 textColor: Colors.white,
@@ -125,5 +135,130 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     // TODO: implement build
     throw UnimplementedError();
+  }
+}
+
+class HomeScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return _HomeScreenState();
+  }
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final _homeItems = [
+    HomeItem(
+        'images/homeitem1.jpg', '맥북에어 스그 기본형', '성수2동', '1분 전', '1,060,000원'),
+    HomeItem('images/homeitem2.jpg', '맥북에어 m1 스페이스 그레이', '성수3동', '끌올 1분 전',
+        '1,000,000원'),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black,
+          elevation: 0,
+          shape: Border(
+            bottom: BorderSide(
+              color: Colors.black26,
+            ),
+          ),
+          //TODO 커스텀으로 하기
+          title: Text(
+            "성수동1가",
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+          ),
+          actions: <Widget>[
+            IconButton(
+              visualDensity: VisualDensity(horizontal: -3),
+              onPressed: null,
+              icon: const Icon(
+                Icons.search,
+                color: Colors.black,
+              ),
+            ),
+            IconButton(
+              visualDensity: VisualDensity(horizontal: -3),
+              onPressed: null,
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.black,
+              ),
+            ),
+            IconButton(
+              visualDensity: VisualDensity(horizontal: -3),
+              onPressed: null,
+              icon: const Icon(
+                Icons.notifications_none_rounded,
+                color: Colors.black,
+              ),
+            )
+          ],
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              HomeItemContainer(_homeItems[0]),
+              HomeItemContainer(_homeItems[1]),
+              HomeItemContainer(_homeItems[0]),
+              HomeItemContainer(_homeItems[1]),
+              HomeItemContainer(_homeItems[0]),
+              HomeItemContainer(_homeItems[1]),
+              HomeItemContainer(_homeItems[0]),
+              HomeItemContainer(_homeItems[1]),
+              HomeItemContainer(_homeItems[0]),
+              HomeItemContainer(_homeItems[1]),
+              HomeItemContainer(_homeItems[0]),
+              HomeItemContainer(_homeItems[1]),
+              HomeItemContainer(_homeItems[0]),
+              HomeItemContainer(_homeItems[1]),
+              HomeItemContainer(_homeItems[0]),
+            ],
+          ),
+        ),
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border(
+              top: BorderSide(
+                color: Colors.black,
+                width: 3,
+              ),
+            ),
+          ),
+          child: BottomNavigationBar(
+            selectedItemColor: Colors.black,
+            unselectedItemColor: Colors.black,
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: '홈',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home_work_outlined),
+                label: '동네생활',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.location_on_outlined),
+                label: '내 근처',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.chat_bubble_outline_rounded),
+                label: '채팅',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person_outline_sharp),
+                label: '나의 당근',
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
