@@ -226,8 +226,7 @@ class _HomeScreenState extends State<HomeScreen> {
             color: Colors.white,
             border: Border(
               top: BorderSide(
-                color: Colors.black,
-                width: 3,
+                color: Colors.black26,
               ),
             ),
           ),
