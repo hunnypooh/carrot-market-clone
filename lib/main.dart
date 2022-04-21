@@ -1,8 +1,11 @@
+import 'package:carrot_clone_app/screen/town_life.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import 'structures.dart';
+import 'models/home_item.dart';
 import 'homeItemContainer.dart';
+import 'screen/town_life.dart';
+import './widgets/main_navigation_bar.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -10,13 +13,12 @@ void main() {
       initialRoute: '/',
       routes: {
         // '/': (context) => StartScreen(),
-        '/': (context) => HomeScreen(),
+        // '/': (context) => HomeScreen(),
+        '/': (context) => TownLife(),
         '/singIn': (context) => SignInScreen(),
         '/logIn': (context) => LoginScreen(),
       },
       theme: ThemeData(
-        // primaryColor: Colors.black,
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(),
         accentColor: Color.fromRGBO(254, 126, 53, 1.0),
       )));
 }
@@ -138,20 +140,12 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
-class HomeScreen extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return _HomeScreenState();
-  }
-}
-
-class _HomeScreenState extends State<HomeScreen> {
+class HomeScreen extends StatelessWidget {
   final _homeItems = [
     HomeItem(
-        'images/homeitem1.jpg', '맥북에어 스그 기본형', '성수2동', '1분 전', '1,060,000원'),
+        'images/homeitem1.jpg', '맥북에어 스그 기본형', '성수2동', '1분 전', '1,060,000원', 2),
     HomeItem('images/homeitem2.jpg', '맥북에어 m1 스페이스 그레이', '성수3동', '끌올 1분 전',
-        '1,000,000원'),
+        '1,000,000원', 10),
   ];
 
   @override
@@ -159,6 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // TODO: implement build
     return MaterialApp(
       home: Scaffold(
+        bottomNavigationBar: MainNavigationBar(),
         appBar: AppBar(
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,
@@ -218,42 +213,6 @@ class _HomeScreenState extends State<HomeScreen> {
               HomeItemContainer(_homeItems[0]),
               HomeItemContainer(_homeItems[1]),
               HomeItemContainer(_homeItems[0]),
-            ],
-          ),
-        ),
-        bottomNavigationBar: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border(
-              top: BorderSide(
-                color: Colors.black26,
-              ),
-            ),
-          ),
-          child: BottomNavigationBar(
-            selectedItemColor: Colors.black,
-            unselectedItemColor: Colors.black,
-            items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: '홈',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home_work_outlined),
-                label: '동네생활',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.location_on_outlined),
-                label: '내 근처',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.chat_bubble_outline_rounded),
-                label: '채팅',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person_outline_sharp),
-                label: '나의 당근',
-              ),
             ],
           ),
         ),
