@@ -101,10 +101,13 @@ class TownLife extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    ButtonTheme(
-                      minWidth: 9,
-                      buttonColor: Colors.black12,
-                      child: RaisedButton(
+                    SizedBox(
+                      height: 20,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.all(0),
+                          primary: Color.fromRGBO(255, 255, 255, 0.1),
+                        ),
                         child: Text(
                           posts[index].tag,
                           style: TextStyle(
@@ -123,26 +126,19 @@ class TownLife extends StatelessWidget {
                     SizedBox(height: 15),
                     Row(
                       children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: <Widget>[
-                            Text(
-                              posts[index].user,
-                              style: TextStyle(
-                                  color: Colors.black54, fontSize: 12),
-                            ),
-                            Text(
-                              '·',
-                              style: TextStyle(
-                                  color: Colors.black54, fontSize: 12),
-                            ),
-                            Text(
-                              posts[index].location,
-                              style: TextStyle(
-                                  color: Colors.black54, fontSize: 12),
-                            ),
-                          ],
+                        Text(
+                          posts[index].user,
+                          style: TextStyle(color: Colors.black54, fontSize: 12),
                         ),
+                        Text(
+                          '·',
+                          style: TextStyle(color: Colors.black54, fontSize: 12),
+                        ),
+                        Text(
+                          posts[index].location,
+                          style: TextStyle(color: Colors.black54, fontSize: 12),
+                        ),
+                        Spacer(),
                         Text(
                           posts[index].time,
                           style: TextStyle(color: Colors.black54, fontSize: 12),
@@ -150,7 +146,7 @@ class TownLife extends StatelessWidget {
                       ],
                     ),
                     Divider(
-                      color: Colors.black38,
+                      color: Colors.red,
                     ),
                     Row(
                       children: [

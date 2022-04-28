@@ -6,6 +6,12 @@ class HomeItem {
   String price;
   int likes;
 
-  HomeItem(this.imagePath, this.title, this.location, this.time, this.price,
-      this.likes);
+  HomeItem(
+    this.imagePath,
+    this.title,
+    this.location,
+    this.time,
+    this.price,
+    this.likes,
+  );
 }

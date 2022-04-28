@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'models/home_item.dart';
+import '../models/home_item.dart';
 
 class HomeItemContainer extends StatelessWidget {
   final HomeItem item;
@@ -25,8 +25,9 @@ class HomeItemContainer extends StatelessWidget {
             ),
             child: Image.asset(
               item.imagePath,
+              height: 110,
               width: 110,
-              fit: BoxFit.fitHeight,
+              fit: BoxFit.cover,
             ),
           ),
           Expanded(
@@ -45,7 +46,7 @@ class HomeItemContainer extends StatelessWidget {
                       style: TextStyle(color: Colors.black38, fontSize: 12),
                     ),
                     Text(
-                      '·',
+                      ' · ',
                       style: TextStyle(color: Colors.black38, fontSize: 12),
                     ),
                     Text(

@@ -1,10 +1,11 @@
-import 'package:carrot_clone_app/screen/town_life.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'models/home_item.dart';
-import 'homeItemContainer.dart';
-import 'screen/town_life.dart';
+import 'widgets/homeItemContainer.dart';
+import 'screen/town_life_screen.dart';
+import 'screen/chat_list_screen.dart';
+import 'screen/my_page_screen.dart';
 import './widgets/main_navigation_bar.dart';
 
 void main() {
@@ -14,7 +15,9 @@ void main() {
       routes: {
         // '/': (context) => StartScreen(),
         // '/': (context) => HomeScreen(),
-        '/': (context) => TownLife(),
+        // '/': (context) => TownLife(),
+        // '/': (context) => ChatListScreen(),
+        '/': (context) => MyPageScreen(),
         '/singIn': (context) => SignInScreen(),
         '/logIn': (context) => LoginScreen(),
       },
