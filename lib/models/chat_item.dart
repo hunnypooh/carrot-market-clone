@@ -1,17 +1,19 @@
-class ChatItem {
-  String profileImagePath;
-  String name;
-  String location;
-  String time;
-  String itemImagePath;
-  String messageLatest;
+import 'package:flutter/material.dart';
 
-  ChatItem(
-    this.profileImagePath,
-    this.name,
-    this.location,
-    this.time,
-    this.itemImagePath,
-    this.messageLatest,
-  );
+class ChatItem {
+  final String profileImagePath;
+  final String name;
+  final String location;
+  final String time;
+  final String itemImagePath;
+  final String messageLatest;
+
+  const ChatItem({
+    @required this.profileImagePath,
+    @required this.name,
+    @required this.location,
+    @required this.time,
+    @required this.itemImagePath,
+    @required this.messageLatest,
+  });
 }

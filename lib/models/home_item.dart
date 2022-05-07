@@ -1,17 +1,19 @@
-class HomeItem {
-  String imagePath;
-  String title;
-  String location;
-  String time;
-  String price;
-  int likes;
+import 'package:flutter/material.dart';
 
-  HomeItem(
-    this.imagePath,
-    this.title,
-    this.location,
-    this.time,
-    this.price,
-    this.likes,
-  );
+class HomeItem {
+  final String imagePath;
+  final String title;
+  final String location;
+  final String time;
+  final String price;
+  final int likes;
+
+  const HomeItem({
+    @required this.imagePath,
+    @required this.title,
+    @required this.location,
+    @required this.time,
+    @required this.price,
+    @required this.likes,
+  });
 }

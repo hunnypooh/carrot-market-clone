@@ -1,29 +1,24 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import 'models/home_item.dart';
-import 'widgets/homeItemContainer.dart';
-import 'screen/town_life_screen.dart';
-import 'screen/chat_list_screen.dart';
-import 'screen/my_page_screen.dart';
-import './widgets/main_navigation_bar.dart';
+import './screens/tabs_screen.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(
+    MaterialApp(
       title: 'Carrot Market Clone',
       initialRoute: '/',
       routes: {
         // '/': (context) => StartScreen(),
-        // '/': (context) => HomeScreen(),
-        // '/': (context) => TownLife(),
-        // '/': (context) => ChatListScreen(),
-        '/': (context) => MyPageScreen(),
+        '/': (context) => TabsScreen(),
         '/singIn': (context) => SignInScreen(),
         '/logIn': (context) => LoginScreen(),
       },
       theme: ThemeData(
         accentColor: Color.fromRGBO(254, 126, 53, 1.0),
-      )));
+      ),
+    ),
+  );
 }
 
 class StartScreen extends StatelessWidget {
@@ -140,86 +135,5 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     // TODO: implement build
     throw UnimplementedError();
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  final _homeItems = [
-    HomeItem(
-        'images/homeitem1.jpg', '맥북에어 스그 기본형', '성수2동', '1분 전', '1,060,000원', 2),
-    HomeItem('images/homeitem2.jpg', '맥북에어 m1 스페이스 그레이', '성수3동', '끌올 1분 전',
-        '1,000,000원', 10),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
-        bottomNavigationBar: MainNavigationBar(),
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
-          elevation: 0,
-          shape: Border(
-            bottom: BorderSide(
-              color: Colors.black26,
-            ),
-          ),
-          //TODO 커스텀으로 하기
-          title: Text(
-            "성수동1가",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
-          ),
-          actions: <Widget>[
-            IconButton(
-              visualDensity: VisualDensity(horizontal: -3),
-              onPressed: null,
-              icon: const Icon(
-                Icons.search,
-                color: Colors.black,
-              ),
-            ),
-            IconButton(
-              visualDensity: VisualDensity(horizontal: -3),
-              onPressed: null,
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.black,
-              ),
-            ),
-            IconButton(
-              visualDensity: VisualDensity(horizontal: -3),
-              onPressed: null,
-              icon: const Icon(
-                Icons.notifications_none_rounded,
-                color: Colors.black,
-              ),
-            )
-          ],
-        ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              HomeItemContainer(_homeItems[0]),
-              HomeItemContainer(_homeItems[1]),
-              HomeItemContainer(_homeItems[0]),
-              HomeItemContainer(_homeItems[1]),
-              HomeItemContainer(_homeItems[0]),
-              HomeItemContainer(_homeItems[1]),
-              HomeItemContainer(_homeItems[0]),
-              HomeItemContainer(_homeItems[1]),
-              HomeItemContainer(_homeItems[0]),
-              HomeItemContainer(_homeItems[1]),
-              HomeItemContainer(_homeItems[0]),
-              HomeItemContainer(_homeItems[1]),
-              HomeItemContainer(_homeItems[0]),
-              HomeItemContainer(_homeItems[1]),
-              HomeItemContainer(_homeItems[0]),
-            ],
-          ),
-        ),
-      ),
-    );
   }
 }
