@@ -1,16 +1,5 @@
-# carrot_clone_app
+# 당근마켓 클론코딩
 
-A new Flutter project.
+스터디를 하면서 플러터를 이용해 5주 동안 각자 당근마켓 클론코딩을 진행함.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+앱의 네비게이션, 기본적인 UI를 구현을 해봄.
