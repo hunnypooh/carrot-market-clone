@@ -26,7 +26,7 @@ class ChatListScreen extends StatelessWidget {
                   backgroundImage:
                       AssetImage(chatItems[index].profileImagePath),
                 ),
-                SizedBox(width: 10),
+                SizedBox(width: 15),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[

@@ -158,6 +158,7 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: false,
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         elevation: 0,
@@ -205,11 +206,17 @@ class _TabsScreenState extends State<TabsScreen> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        foregroundColor: Colors.white,
-        onPressed: () {},
-      ),
+      floatingActionButton: _getFAB(_pages[_selectedPageIndex]['isFloating']),
+    );
+  }
+}
+
+Widget _getFAB(bool isFloating) {
+  if (isFloating) {
+    return FloatingActionButton(
+      child: Icon(Icons.add),
+      foregroundColor: Colors.white,
+      onPressed: () {},
     );
   }
 }
