@@ -5,11 +5,11 @@ class MainNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 65,
-      padding: EdgeInsets.all(6),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.all(6),
+      decoration: const BoxDecoration(
         border: Border(
           top: BorderSide(
-            color: Colors.black26,
+            color: Colors.grey,
             width: 0.5,
           ),
         ),
